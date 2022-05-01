@@ -37,21 +37,6 @@ public class BotJoinGuildListener extends ListenerAdapter {
         } catch (InsufficientPermissionException ex) {
             owner.openPrivateChannel().flatMap(channel -> channel.sendMessage("Hello {}! I don't have permission to create roles in your server, so even if members pick a flavor, they won't get the role!".replace("{}", owner.getName()))).queue();
         }
-
-        EmbedBuilder embedBuilder = new EmbedBuilder()
-                .setTitle(":v: Hey there! What's your favorite Boba Tea?")
-                .setDescription("Choose your favorite flavor!")
-                .setColor(Color.PINK);
-
-        MessageBuilder messageBuilder = new MessageBuilder()
-                .setEmbeds(embedBuilder.build());
-
-        e.getGuild().getRulesChannel().sendMessage(messageBuilder.build())
-                .setActionRow(Button.secondary("milk_tea", "Black / Milk Tea"),
-                        Button.secondary("strawberry_tea", "Strawberry Tea"),
-                        Button.secondary("honey_green_tea", "Honey Green Tea"),
-                        Button.secondary("wintermelon_tea", "Wintermelon Tea"))
-                .queue();
     }
 
     @Override

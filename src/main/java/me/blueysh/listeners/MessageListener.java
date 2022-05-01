@@ -1,12 +1,16 @@
 package me.blueysh.listeners;
 
 import me.blueysh.BobaBot;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.components.buttons.Button;
+
+import java.awt.*;
 
 public class MessageListener extends ListenerAdapter {
     @Override
@@ -15,6 +19,29 @@ public class MessageListener extends ListenerAdapter {
 
         Message messageRaw = e.getMessage();
         String message = messageRaw.toString();
+        if (message.contains("?bpicker")) {
+            messageRaw.delete().queue();
+            if (!e.getGuild().retrieveOwner().complete().equals(messageRaw.getAuthor())) {
+                messageRaw.getAuthor().openPrivateChannel().flatMap(channel -> channel.sendMessage("Hi {}, you don't have permission to send the boba picker message in that server. Tell the server owner to use the ?boba-picker command.")).queue();
+                return;
+            }
+            EmbedBuilder embedBuilder = new EmbedBuilder()
+                    .setTitle(":v: Hey there! What's your favorite Boba Tea?")
+                    .setDescription("Choose your favorite flavor!")
+                    .setColor(Color.PINK);
+
+            MessageBuilder messageBuilder = new MessageBuilder()
+                    .setEmbeds(embedBuilder.build());
+
+            messageRaw.getChannel().sendMessage(messageBuilder.build())
+                    .setActionRow(net.dv8tion.jda.api.interactions.components.buttons.Button.secondary("milk_tea", "Black / Milk Tea"),
+                            net.dv8tion.jda.api.interactions.components.buttons.Button.secondary("strawberry_tea", "Strawberry Tea"),
+                            net.dv8tion.jda.api.interactions.components.buttons.Button.secondary("honey_green_tea", "Honey Green Tea"),
+                            Button.secondary("wintermelon_tea", "Wintermelon Tea"))
+                    .queue();
+            return;
+        }
+
         if (message.contains("?boba")) {
             if (messageRaw.getMentionedMembers().isEmpty()) {
                 messageRaw.delete().queue();

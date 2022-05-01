@@ -1,8 +1,8 @@
 me/blueysh/listeners/ButtonListener.java
  me.blueysh.listeners.ButtonListener
-me/blueysh/listeners/MessageListener.java
- me.blueysh.listeners.MessageListener
-me/blueysh/BobaBot.java
- me.blueysh.BobaBot
 me/blueysh/listeners/BotJoinGuildListener.java
  me.blueysh.listeners.BotJoinGuildListener
+me/blueysh/BobaBot.java
+ me.blueysh.BobaBot
+me/blueysh/listeners/MessageListener.java
+ me.blueysh.listeners.MessageListener
