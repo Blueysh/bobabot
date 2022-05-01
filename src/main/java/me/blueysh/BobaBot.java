@@ -13,7 +13,7 @@ import javax.security.auth.login.LoginException;
 public class BobaBot {
     private static JDA jda;
 
-    private static String TOKEN = "OTcwMDA5NTEzMTcwMTkwNDU5.Ym1twQ.d-5vr8CUGsdNSMzRqt5EiSJM3Hg";
+    private static String TOKEN = "OTcwMDA5NTEzMTcwMTkwNDU5.Ym1twQ.8yUBDtlaGSt2NnA78FshPt5NUzA";
     public static String PREFIX = "?";
 
     public static void main(String[] args) throws LoginException, InterruptedException {
