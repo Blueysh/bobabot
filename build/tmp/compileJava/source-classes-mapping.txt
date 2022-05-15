@@ -1,8 +1,18 @@
-me/blueysh/BobaBot.java
- me.blueysh.BobaBot
-me/blueysh/listeners/ButtonListener.java
- me.blueysh.listeners.ButtonListener
+me/blueysh/utils/BobaRoles.java
+ me.blueysh.utils.BobaRoles
 me/blueysh/listeners/MessageListener.java
  me.blueysh.listeners.MessageListener
+me/blueysh/listeners/ButtonListener.java
+ me.blueysh.listeners.ButtonListener
+me/blueysh/commands/PickerCommand.java
+ me.blueysh.commands.PickerCommand
+me/blueysh/commands/HelpCommand.java
+ me.blueysh.commands.HelpCommand
+me/blueysh/commands/BobaCommand.java
+ me.blueysh.commands.BobaCommand
+me/blueysh/BobaBot.java
+ me.blueysh.BobaBot
+me/blueysh/listeners/SlashCommandListener.java
+ me.blueysh.listeners.SlashCommandListener
 me/blueysh/listeners/BotJoinGuildListener.java
  me.blueysh.listeners.BotJoinGuildListener
