@@ -20,17 +20,18 @@ public class BotJoinGuildListener extends ListenerAdapter {
         e.getGuild().upsertCommand("pickboba", "Select your favorite boba flavor.").queue();
 
         try {
-            e.getGuild().createRole().setName("Black / Milk Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Strawberry Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Honey Green Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Wintermelon Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Coffee Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Fruity Iced Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Chocolate Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Taro Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Peach Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Almond Milk Boba Tea").setColor(Color.PINK).queue();
-            e.getGuild().createRole().setName("Melon Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Black / Milk Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Black / Milk Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Strawberry Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Strawberry Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Honey Green Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Honey Green Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Wintermelon Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Wintermelon Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Coffee Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Coffee Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Fruity Iced Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Fruity Iced Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Chocolate Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Chocolate Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Taro Boba Tea", true).isEmpty())  e.getGuild().createRole().setName("Taro Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Peach Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Peach Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Almond Milk Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Almond Milk Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Melon Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Melon Boba Tea").setColor(Color.PINK).queue();
+            if (e.getGuild().getRolesByName("Hokkaido Boba Tea", true).isEmpty()) e.getGuild().createRole().setName("Hokkaido Boba Tea").setColor(Color.PINK).queue();
             owner.openPrivateChannel().flatMap(channel -> channel.sendMessage("Hello {}! Thanks for adding me to []! If you want to allow users to choose their favorite bubble tea flavors, just send `?bpicker` in the channel you want the picker to be sent. Thanks! :bubble_tea:".replace("{}", owner.getName()).replace("[]",e.getGuild().getName()))).queue();
         } catch (InsufficientPermissionException ex) {
             owner.openPrivateChannel().flatMap(channel -> channel.sendMessage("Hello {}! I don't have permission to create roles in your server, so even if members pick a flavor, they won't get the role!".replace("{}", owner.getName()))).queue();

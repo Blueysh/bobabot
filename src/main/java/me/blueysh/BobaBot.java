@@ -2,7 +2,9 @@ package me.blueysh;
 
 import me.blueysh.listeners.BotJoinGuildListener;
 import me.blueysh.listeners.ButtonListener;
+import me.blueysh.listeners.MenuListener;
 import me.blueysh.listeners.MessageListener;
+import me.blueysh.listeners.SlashCommandListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -21,8 +23,7 @@ public class BobaBot {
                 .setActivity(Activity.watching("for boba!"))
                 .build();
 
-        jda.addEventListener(new MessageListener());
-        jda.addEventListener(new BotJoinGuildListener());
+        jda.addEventListener(new SlashCommandListener(), new MenuListener(), new BotJoinGuildListener());
 
         // Removed the button based picker for now - jda.addEventListener(new ButtonListener());
 
