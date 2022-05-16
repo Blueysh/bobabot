@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+@keyframes button_hover_trigger
+{
+    from {background-color: #ffffff3f;}
+    to {background-color: pink;}
+}
+@keyframes button_hover_untrigger
+{
+    to {background-color: #ffffff3f;}
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    min-height: 100vh;
+    background: #080808;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    cursor: default;
+    user-select: none;
+}
+header .img
+{
+    position: absolute;
+    padding: 0px 0px;
+    display: flex;
+    width: 2%;
+    height: 20%;
+    cursor: default;
+    user-select: none;
+}
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    cursor: default;
+    user-select: none;
+}
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    user-select: none;
+}
+ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    user-select: none;
+}
+ul.stack
+{
+    cursor: default;
+    user-select: none;
+}
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+    cursor: default;
+    user-select: none;
+}
+ul li
+{
+    list-style: none;
+    margin-left: 20px;
+    cursor: default;
+    user-select: none;
+}
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+    outline: aquamarine;
+    outline-color: aquamarine;
+    outline-width: 5px;
+    background: #ffffff3f;
+    animation-name: button_hover_untrigger;
+    animation-duration: 0.5s;
+    user-select: none;
+}
+ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+    outline: aquamarine;
+    outline-color: aquamarine;
+    outline-width: 5px;
+    background: #ffffff3f;
+    animation-name: button_hover_untrigger;
+    animation-duration: 0.5s;
+    user-select: none;
+}
+ul li a:hover,
+ul li a.active
+{
+    background: pink;
+    color: white;
+    animation-name: button_hover_trigger;
+    animation-duration: 0.5s;
+    user-select: none;
+}
+section
+{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    cursor: default;
+    user-select: none;
+}
+section .small
+{
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    cursor: default;
+    user-select: none;
+}
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    cursor: default;
+    user-select: none;
+}
+#page-title
+{
+    position: absolute;
+    font-size: 78px;
+    color: #fff;
+    cursor: default;
+    user-select: none;
+}
+#page-header
+{
+    position: absolute;
+    font-size: 40px;
+    color: #fff;
+    cursor: default;
+    user-select: none;
+}
+#pink-text
+{
+    font-size: inherit;
+    color: pink;
+    cursor: default;
+    user-select: none;
+}
+.hand
+{
+    position: absolute;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 78px;
+    cursor: default;
+    user-select: none;
+}
